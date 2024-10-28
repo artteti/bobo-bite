@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
-import { Menu } from "./Menu";
+import { Menu } from "../Menu";
+import { LayoutContainer, ContentContainer, Footer } from "./Layout.styles";
 
 export const Layout = () => {
   return (
-    <div>
+    <LayoutContainer>
       <Menu />
-      <Outlet />
-    </div>
+      <ContentContainer>
+        <Outlet />
+      </ContentContainer>
+      <Footer>&copy; {new Date().getFullYear()} BoboBite</Footer>
+    </LayoutContainer>
   );
 };
