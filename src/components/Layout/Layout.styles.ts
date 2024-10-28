@@ -6,7 +6,7 @@ export const LayoutContainer = styled.div`
   min-height: 100vh;
   height: 100vh;
   width: 100vw;
-  background-color: #f4f4f9;
+  background-color: ${(props) => props.theme.colors.background};
   overflow: hidden;
 `;
 
@@ -27,7 +27,7 @@ export const ContentContainer = styled.main`
 export const Footer = styled.footer`
   width: 100%;
   padding: 10px 20px;
-  background-color: #343a40;
+  background-color: ${(props) => props.theme.colors.dark};
   color: white;
   text-align: center;
   font-size: 0.9em;
