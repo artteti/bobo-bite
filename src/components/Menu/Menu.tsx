@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  MenuWrapper,
-  LinksContainer,
-  StyledNavLink,
-  IconsContainer,
-  LogoContainer,
-} from "./Menu.styles";
+
+import * as S from "./Menu.styles";
 import logoImage from "../../assets/logo.png";
 import { FaUser, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -15,33 +10,31 @@ import { theme } from "../../theme";
 export const Menu: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <MenuWrapper>
-        <LogoContainer>
-          <LinksContainer>
-            <Link to="/">
-              <img src={logoImage} alt="BoboBite Logo" />
-            </Link>
-          </LinksContainer>
-        </LogoContainer>
+      <S.MenuWrapper>
+        <S.LinksContainer>
+          <Link to="/">
+            <S.StyledLogo src={logoImage} alt="BoboBite Logo" />
+          </Link>
+        </S.LinksContainer>
 
-        <LinksContainer>
+        <S.LinksContainer>
           <li>
-            <StyledNavLink to={"/recipes"}>Recipes</StyledNavLink>
+            <S.StyledNavLink to={"/recipes"}>Recipes</S.StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to={"/articles"}>Articles</StyledNavLink>
+            <S.StyledNavLink to={"/articles"}>Articles</S.StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to={"/about"}>About Us</StyledNavLink>
+            <S.StyledNavLink to={"/about"}>About Us</S.StyledNavLink>
           </li>
-        </LinksContainer>
+        </S.LinksContainer>
 
         {/* Ikony użytkownika i wyszukiwarki */}
-        <IconsContainer>
+        <S.IconsContainer>
           <FaSearch title="Search" />
           <FaUser title="User Profile" />
-        </IconsContainer>
-      </MenuWrapper>
+        </S.IconsContainer>
+      </S.MenuWrapper>
     </ThemeProvider>
   );
 };

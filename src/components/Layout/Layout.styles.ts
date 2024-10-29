@@ -19,7 +19,7 @@ export const ContentContainer = styled.main`
   justify-content: center;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     padding: 15px;
   }
 `;
@@ -30,10 +30,10 @@ export const Footer = styled.footer`
   background-color: ${(props) => props.theme.colors.dark};
   color: white;
   text-align: center;
-  font-size: 0.9em;
+  font-size: ${(props) => props.theme.fontSizes.sm};
 
-  @media (max-width: 768px) {
-    font-size: 0.8em;
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    font-size: ${(props) => props.theme.fontSizes.xs};
     padding: 8px 15px;
   }
 `;

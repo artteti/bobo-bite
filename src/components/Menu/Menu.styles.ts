@@ -7,13 +7,17 @@ export const MenuWrapper = styled.nav`
   justify-content: space-between;
   padding: 10px 20px;
   background-color: ${(props) => props.theme.colors.background};
-  border-bottom: 1px solid #b8c5d6;
+  border-bottom: 1px solid ${(props) => props.theme.colors.secondary};
 `;
 
-export const LogoContainer = styled.div`
-  img {
-    height: 50px;
-    width: auto;
+export const StyledLogo = styled.img`
+  height: 50px;
+  width: auto;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
   }
 `;
 
@@ -26,9 +30,9 @@ export const LinksContainer = styled.ul`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  color: black;
+  color: ${(props) => props.theme.colors.textPrimary};
   text-decoration: none;
-  font-size: 18px;
+  font-size: ${(props) => props.theme.fontSizes.lg};
 
   &.active {
     color: ${(props) => props.theme.colors.primary};
@@ -41,8 +45,8 @@ export const StyledNavLink = styled(NavLink)`
 export const IconsContainer = styled.div`
   display: flex;
   gap: 15px;
-  font-size: 16px;
-  color: black;
+  font-size: ${(props) => props.theme.fontSizes.md};
+  color: ${(props) => props.theme.colors.textPrimary};
   cursor: pointer;
 
   svg:hover {

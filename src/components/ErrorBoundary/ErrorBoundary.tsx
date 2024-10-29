@@ -1,11 +1,25 @@
 import { ErrorBoundary as ReactErrorBoundary } from "react-error-boundary";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../theme";
+import {
+  ErrorContainer,
+  ErrorHeader2,
+  ErrorText,
+} from "./ErrorBoundary.styles";
+import { Button } from "../Button/Button";
+
+const handleReload = () => window.location.reload();
 
 const ErrorFallback = () => (
-  <div style={{ padding: "20px", textAlign: "center" }}>
-    <h2>Oops! Something went wrong.</h2>
-    <p>We’re working to fix this issue. Please try again later.</p>
-    <button onClick={() => window.location.reload()}>Reload</button>
-  </div>
+  <ThemeProvider theme={theme}>
+    <ErrorContainer>
+      <ErrorHeader2>Oops! Something went wrong.</ErrorHeader2>
+      <ErrorText>
+        We’re working to fix this issue. Please try again later.
+      </ErrorText>
+      <Button label="Reload" onClick={handleReload} styletype="primary" />
+    </ErrorContainer>
+  </ThemeProvider>
 );
 
 interface ErrorBoundaryProps {
