@@ -7,12 +7,12 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      welcomeMessage: "Welcome to React",
+      welcomeMessage: "Welcome to BoboBite",
     },
   },
   pl: {
     translation: {
-      welcomeMessage: "Witamy w React",
+      welcomeMessage: "Witamy w BoboBite",
     },
   },
 };
